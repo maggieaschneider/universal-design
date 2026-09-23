@@ -1,80 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Maggie Schneider - CSCI 3150</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #fff8e1;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maggie Schneider - CSCI 3150</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff8e1;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
 
-    nav {
-        background-color: #ff69b4;
-        padding: 15px;
-        text-align: center;
-    }
+        .sr-only {
+            border: 0;
+            clip: rect(0, 0, 0, 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            white-space: nowrap;
+            width: 1px;
+        }
 
-    nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
-    }
+        header h1 {
+            text-align: center;
+            color: #91089d;
+        }
 
-    h1 {
-        text-align: center;
-        color: #91089d;
-    }
+        nav {
+            background-color: #b0125f; /* darker pink so white text passes contrast */
+            padding: 15px;
+            text-align: center;
+        }
 
-    h2 {
-        color: #ffb300;
-    }
-    h3 {
-        text-align: center;
-        color: #91089d;
-    }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-    .container {
-        max-width: 700px;
-        margin: 0 auto;
-        padding: 20px;
-    }
+        nav li {
+            display: inline-block;
+            margin: 0 15px;
+        }
 
-    img {
-        display: block;
-        margin: 20px auto;
-        width: 200px;
-        border: 5px solid #ffb300;
-        border-radius: 10px;
-    } 
-</style>
+        nav a {
+            color: white;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        nav a:focus,
+        nav a:hover {
+            outline: 3px solid #ffe082;
+            outline-offset: 3px;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #8a5a00; /* darker gold for contrast on cream */
+        }
+
+        figure {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        figure img {
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            border: 5px solid #ffb300;
+            border-radius: 10px;
+        }
+
+        figcaption {
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-
 <nav>
-    <a href="index.html">Home</a>
-    <a href="assignment1.html">Assignment One</a>
-    <a href="assignment2.html">Assignment Two</a>
-    <a href="assignment3.html">Assignment Three</a>
+    <h2 class="sr-only">Site navigation</h2>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="assignment1.html">Assignment One</a></li>
+        <li><a href="assignment2.html">Assignment Two</a></li>
+        <li><a href="assignment3.html">Assignment Three</a></li>
+    </ul>
 </nav>
+<header>
+    <h1>Portfolio - CSCI 3150</h1>
+</header>
 
-<h1>Portfolio - CSCI 3150</h1>
-<div class="container">
 
-    <img src="mepic.jpg" alt="me (maggie) holding a bucket of popcorn looking confused at the minions icee">
-    
 
-    <h2>About Me</h2>
-    <p>Hi, I'm Maggie! This is me over the summer at the new Minions movie. I 
-    love reading and I just started R.F. Kuang's new book and I'm so excited. I also love
-    Broadway and am listening to that as I write this (currently listening to "Maybe This
-    Time" from Cabaret). My favorite pokemon is klinklang. Idk what else to say</p>
+<main>
+    <section>
+        <h2>About Me</h2>
 
-</div>
+        <figure>
+            <img src="mepic.jpg" alt="Maggie holding a bucket of popcorn and looking confused at a Minions-themed icee">
+            <figcaption>Me at the new Minions movie this summer.</figcaption>
+        </figure>
+
+        <p>Hi, I'm Maggie! This is me over the summer at the new Minions movie. I
+        love reading and I just started R.F. Kuang's new book and I'm so excited. I also love
+        Broadway and am listening to that as I write this (currently listening to "Maybe This
+        Time" from Cabaret). My favorite pokemon is klinklang. Idk what else to say.</p>
+    </section>
+</main>
+
+<footer>
+    <p>Maggie Schneider, CSCI 3150</p>
+</footer>
 
 </body>
 </html>
