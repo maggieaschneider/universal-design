@@ -1,0 +1,149 @@
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: "Source Sans 3", Arial, sans-serif;
+     font-size: 1.125rem;
+     line-height: 1.6;
+     background-color: #fff8e1;
+     color: #333;
+     margin: 0;
+     padding: 0;
+ }
+
+ .wrapper,
+ footer {
+     max-width: 100ch;
+     margin: 0 auto;
+     padding-left: 20px;
+     padding-right: 20px;
+ }
+
+ .sr-only {
+     border: 0;
+     clip: rect(0, 0, 0, 0);
+     height: 1px;
+     margin: -1px;
+     overflow: hidden;
+     padding: 0;
+     position: absolute;
+     white-space: nowrap;
+     width: 1px;
+ }
+
+ h1,
+ h2,
+ h3,
+ h4 {
+     font-family: "Lora", Georgia, serif;
+     line-height: 1.25;
+ }
+
+ header h1 {
+     text-align: center;
+     color: #91089d;
+ }
+
+ header p {
+     text-align: center;
+ }
+
+ nav {
+     background-color: #b0125f;
+     padding: 15px;
+     text-align: center;
+ }
+
+ nav ul {
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ nav li {
+     display: inline-block;
+     margin: 5px 12px;
+ }
+
+ nav a {
+     color: white;
+     text-decoration: underline;
+     font-weight: bold;
+ }
+
+ nav a:focus,
+ nav a:hover {
+     outline: 3px solid #ffe082;
+     outline-offset: 3px;
+ }
+
+ main {
+     padding-top: 20px;
+     padding-bottom: 20px;
+ }
+
+ h2 {
+     color: #8a5a00;
+ }
+
+ h3 {
+     color: #91089d;
+ }
+
+ figure {
+     margin: 20px auto;
+     text-align: center;
+ }
+
+ figure img {
+     width: 250px;
+     max-width: 100%;
+     height: auto;
+     border: 5px solid #ffb300;
+     border-radius: 10px;
+ }
+
+ figcaption {
+     font-size: 0.9em;
+ }
+
+ table {
+     border-collapse: collapse;
+     width: 100%;
+     margin: 15px 0;
+ }
+
+ caption {
+     text-align: left;
+     font-weight: bold;
+     padding-bottom: 5px;
+ }
+
+ th,
+ td {
+     border: 1px solid #ffb300;
+     padding: 6px 8px;
+     text-align: left;
+     vertical-align: top;
+ }
+
+ thead th {
+     background-color: #91089d;
+     color: white;
+ }
+
+ aside {
+     border: 3px solid #ffb300;
+     border-radius: 10px;
+     padding: 5px 20px 15px;
+     margin-top: 30px;
+ }
+
+ footer {
+     text-align: center;
+     padding-top: 20px;
+     padding-bottom: 20px;
+ }
