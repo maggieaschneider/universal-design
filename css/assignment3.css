@@ -1,0 +1,148 @@
+/* Hadestown palette: black, white, red */
+:root {
+    --black: #000;
+    --charcoal: #1a1a1a;
+    --white: #fff;
+    --red-deep: #b3121b;   /* white text on this passes (about 7:1) */
+    --red-bright: #ff4d4d; /* red text on black passes (about 6:1) */
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
+    max-width: 1200px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    /* 2D layout with grid areas */
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
+    grid-template-areas:
+        "header header header"
+        "nav    nav    nav"
+        "left   main   right"
+        "footer footer footer";
+}
+
+header  { grid-area: header; }
+nav     { grid-area: nav; }
+main    { grid-area: main; }
+#about-show  { grid-area: left; }
+#quick-facts { grid-area: right; }
+footer  { grid-area: footer; }
+
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; }
+
+.skip-link {
+    position: absolute;
+    top: -3rem;
+    left: 0.5rem;
+    background: var(--red-deep);
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 0 0 6px 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: top 0.2s;
+}
+.skip-link:focus { top: 0; outline: 3px solid var(--white); }
+
+.sr-only {
+    border: 0; clip: rect(0,0,0,0); height: 1px; margin: -1px;
+    overflow: hidden; padding: 0; position: absolute;
+    white-space: nowrap; width: 1px;
+}
+
+/* Header */
+header { border-bottom: 4px solid var(--red-deep); padding: 2rem 0 1rem; }
+header h1 {
+    margin: 0;
+    text-align: center;
+    font-size: clamp(2.25rem, 8vw, 4.5rem);
+    letter-spacing: 0.02em;
+    color: var(--white);
+}
+
+/* Nav: 1D layout with flexbox */
+nav { background-color: var(--red-deep); padding: 0.5rem; }
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.5rem;
+}
+nav a {
+    display: block;
+    padding: 0.6rem 0.75rem;
+    color: var(--white);
+    font-weight: 700;
+    text-decoration: underline;
+}
+nav a[aria-current="page"] { text-decoration-thickness: 3px; }
+nav a:focus, nav a:hover { outline: 3px solid var(--white); outline-offset: 2px; }
+
+/* Main */
+main { background: var(--charcoal); padding: 1.5rem; border-radius: 4px; }
+main h2 { color: var(--red-bright); border-bottom: 2px solid var(--red-deep); padding-bottom: 0.3rem; margin-top: 0; }
+
+.song { border-left: 4px solid var(--red-deep); padding-left: 1rem; margin: 1.5rem 0; }
+.song h3 { margin: 0 0 0.25rem; font-size: 1.4rem; }
+.song p { margin: 0; }
+
+/* Asides */
+aside { background: var(--white); color: var(--black); padding: 1.25rem; border-top: 6px solid var(--red-deep); align-self: start; }
+aside h2 { color: var(--red-deep); margin-top: 0; font-size: 1.4rem; }
+aside ul { padding-left: 1.25rem; margin: 0; }
+
+/* Footer */
+footer { text-align: center; padding: 1.25rem; border-top: 3px solid var(--red-deep); }
+footer p { margin: 0; }
+
+/* Tablet: main spans the top, asides sit side by side */
+@media (max-width: 900px) {
+    body {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas:
+            "header header"
+            "nav    nav"
+            "main   main"
+            "left   right"
+            "footer footer";
+    }
+}
+
+/* Mobile: single column, vertical thumb-friendly nav */
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "header"
+            "nav"
+            "main"
+            "left"
+            "right"
+            "footer";
+    }
+    nav { padding: 0; }
+    nav ul { flex-direction: column; flex-wrap: nowrap; gap: 0; }
+    nav li + li { border-top: 1px solid var(--white); }
+    nav a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        font-size: 1.15rem;
+    }
+    main { padding: 1rem; }
+}
