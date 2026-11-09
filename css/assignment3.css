@@ -1,10 +1,9 @@
-/* Hadestown palette: black, white, red */
 :root {
     --black: #000;
     --charcoal: #1a1a1a;
     --white: #fff;
-    --red-deep: #b3121b;   /* white text on this passes (about 7:1) */
-    --red-bright: #ff4d4d; /* red text on black passes (about 6:1) */
+    --red-deep: #b3121b;   
+    --red-bright: #ff4d4d; 
 }
 
 * { box-sizing: border-box; }
@@ -18,8 +17,6 @@ body {
     max-width: 1200px;
     font-size: 1.05rem;
     line-height: 1.7;
-
-    /* 2D layout with grid areas */
     display: grid;
     gap: 1.5rem;
     grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr) minmax(0, 1fr);
@@ -58,8 +55,6 @@ h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; line-height: 1.2; 
     overflow: hidden; padding: 0; position: absolute;
     white-space: nowrap; width: 1px;
 }
-
-/* Header */
 header { border-bottom: 4px solid var(--red-deep); padding: 2rem 0 1rem; }
 header h1 {
     margin: 0;
@@ -69,7 +64,6 @@ header h1 {
     color: var(--white);
 }
 
-/* Nav: 1D layout with flexbox */
 nav { background-color: var(--red-deep); padding: 0.5rem; }
 nav ul {
     list-style: none;
@@ -91,7 +85,6 @@ nav a {
 nav a[aria-current="page"] { text-decoration-thickness: 3px; }
 nav a:focus, nav a:hover { outline: 3px solid var(--white); outline-offset: 2px; }
 
-/* Main */
 main { background: var(--charcoal); padding: 1.5rem; border-radius: 4px; }
 main h2 { color: var(--red-bright); border-bottom: 2px solid var(--red-deep); padding-bottom: 0.3rem; margin-top: 0; }
 
@@ -99,16 +92,13 @@ main h2 { color: var(--red-bright); border-bottom: 2px solid var(--red-deep); pa
 .song h3 { margin: 0 0 0.25rem; font-size: 1.4rem; }
 .song p { margin: 0; }
 
-/* Asides */
 aside { background: var(--white); color: var(--black); padding: 1.25rem; border-top: 6px solid var(--red-deep); align-self: start; }
 aside h2 { color: var(--red-deep); margin-top: 0; font-size: 1.4rem; }
 aside ul { padding-left: 1.25rem; margin: 0; }
 
-/* Footer */
 footer { text-align: center; padding: 1.25rem; border-top: 3px solid var(--red-deep); }
 footer p { margin: 0; }
 
-/* Tablet: main spans the top, asides sit side by side */
 @media (max-width: 900px) {
     body {
         grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -121,7 +111,6 @@ footer p { margin: 0; }
     }
 }
 
-/* Mobile: single column, vertical thumb-friendly nav */
 @media (max-width: 600px) {
     body {
         grid-template-columns: minmax(0, 1fr);
